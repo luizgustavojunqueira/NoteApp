@@ -1,6 +1,12 @@
-<script>
+<script setup>
+import MarkdownInput from '../components/MarkdownInput.vue';
+import Note from '../components/Note.vue';
+
 </script>
 
 <template>
-    Hello, World
+    <main id="HomeView">
+        <MarkdownInput />
+        <Note />
+    </main>
 </template>

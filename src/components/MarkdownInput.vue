@@ -1,21 +1,20 @@
 <script setup>
 
-import { useMarkdownStore } from '../stores/markdown.js'
+import { useNoteStore } from '../stores/notes.js'
 import { debounce } from 'lodash-es'
 
-const markdown = useMarkdownStore()
+const notes = useNoteStore()
 
 const update = debounce((e) => {
-    markdown.update(e.target.value)
+    notes.updateNote(e.target.value)
 }, 100)
+
 
 </script>
 
 <template>
-    <section id="editor">
 
-        <textarea id="markdownInput" :value="input" @input="update">
-        </textarea>
+    <textarea id="markdownInput" :value="notes.input" @input="update">
+    </textarea>
 
-    </section>
 </template>
